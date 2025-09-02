@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Vote Now</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='styles.css') }}">
+</head>
+<body>
+    <div class="container">
+        <h2>🗳️ Vote for Your Candidate</h2>
+
+        <!-- Flash Messages -->
+        {% with messages = get_flashed_messages(with_categories=true) %}
+    {% if messages %}
+        {% for category, message in messages %}
+            {% if "Vote cast successfully" not in message %}
+                <div class="flash-message {{ category }}">{{ message }}</div>
+            {% endif %}
+        {% endfor %}
+    {% endif %}
+{% endwith %}
+
+
+        <form action="/vote" method="POST">
+            <label for="voter_id">Enter Your Voter ID:</label>
+            <input type="text" id="voter_id" name="voter_id" placeholder="Enter your Voter ID" required>
+
+            <label for="candidate_id">Select a Candidate:</label>
+            <select id="candidate_id" name="candidate_id" required>
+                {% if candidates %}
+                    {% for candidate in candidates %}
+                        <option value="{{ candidate[0] }}">{{ candidate[1] }}</option>
+                    {% endfor %}
+                {% else %}
+                    <option value="" disabled>No candidates available</option>
+                {% endif %}
+            </select>
+
+            <button type="submit" class="vote-button">✅ Cast Your Vote</button>
+        </form>
+
+        <p><a href="/" class="back-link">← Back to Registration</a></p>
+    </div>
+</body>
+</html>

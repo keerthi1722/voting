@@ -1,0 +1,18 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Voter Registration</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='styles.css') }}">
+</head>
+<body>
+    <h1>Register to Vote</h1>
+    <form action="/" method="POST">
+        <input type="text" name="name" placeholder="Enter Name" required>
+        <input type="text" name="voter_id" placeholder="Enter Voter ID" required>
+        <button type="submit">Register</button>
+        <p class="already-registered">
+            Already registered? <a href="{{ url_for('vote') }}" class="vote-link">Go to Vote</a>
+        </p>
+    </form>
+</body>
+</html>
