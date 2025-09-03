@@ -138,6 +138,73 @@ a:hover {
     margin-bottom: 20px;
     color: #e0e0e0;
 }
+/* Dropdown (Select) Styling */
+select {
+    width: 95%;
+    padding: 12px;
+    margin: 10px 0;
+    border-radius: 8px;
+    border: none;
+    outline: none;
+    font-size: 15px;
+    background: rgba(255, 255, 255, 0.15);
+    color: white;
+    transition: all 0.3s ease-in-out;
+    appearance: none; /* Removes default arrow */
+    cursor: pointer;
+    box-shadow: inset 0 1px 3px rgba(0, 0, 0, 0.2);
+}
+
+/* Dropdown Focus */
+select:focus {
+    background: rgba(255, 255, 255, 0.25);
+    box-shadow: 0 0 10px rgba(0, 150, 255, 0.5);
+    transform: scale(1.01);
+}
+
+/* Dropdown Options */
+select option {
+    background: #2c3e50;
+    color: #f1f1f1;
+    font-size: 15px;
+    padding: 10px;
+}
+
+/* Vote Button */
+.vote-button {
+    background: linear-gradient(135deg, #28a745, #218838);
+    color: white;
+    padding: 14px;
+    width: 100%;
+    border: none;
+    border-radius: 8px;
+    font-size: 16px;
+    font-weight: 600;
+    cursor: pointer;
+    transition: all 0.3s ease-in-out;
+    box-shadow: 0 3px 10px rgba(0, 0, 0, 0.3);
+}
+
+.vote-button:hover {
+    background: linear-gradient(135deg, #218838, #1c7430);
+    transform: scale(1.03);
+}
+
+/* Back Link */
+.back-link {
+    display: inline-block;
+    margin-top: 12px;
+    color: #4da6ff;
+    font-weight: 500;
+    text-decoration: none;
+    transition: color 0.3s ease-in-out;
+}
+
+.back-link:hover {
+    color: #82caff;
+    text-decoration: underline;
+}
+
 
 /* Animations */
 @keyframes fadeInScale {
@@ -166,3 +233,4 @@ a:hover {
         padding: 12px;
     }
 }
+
